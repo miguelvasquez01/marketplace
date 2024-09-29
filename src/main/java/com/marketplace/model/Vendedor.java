@@ -11,4 +11,8 @@ public class Vendedor {
     private String cedula;
     private String direccion;
     private ArrayList<Producto> productos;
+    private ArrayList<Vendedor> contactos;
+    private ArrayList<Resena> reseñas;
+    private ArrayList<Vendedor> solicitudesDeContacto;
+    private Muro muro;
 }
