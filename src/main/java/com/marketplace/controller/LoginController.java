@@ -1,46 +1,46 @@
 package com.marketplace.controller;
 
+import java.io.IOException;
+
+import com.marketplace.App;
 import com.marketplace.model.Vendedor;
 import com.marketplace.services.AuthService;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LoginController {
-    
-    @FXML
-    private Label lbApellidos;
-
-    @FXML
-    private Label lbCedula;
-
-    @FXML
-    private Label lbNombre;
-
-    @FXML
-    private TextField tfNombre;
 
     @FXML
     private TextField tfCedula;
 
+    @FXML
+    private TextField tfNombreUsuario;
+
     private AuthService authService = new AuthService();
 
     @FXML
-    private void ingresarAction(ActionEvent event) {
-        String username = tfNombre.getText();
+    void btnEntrar(ActionEvent event) {
+        String username = tfNombreUsuario.getText();
         String password = tfCedula.getText();
-        
+
         Vendedor vendedor = authService.login(username, password);
 
-        if(vendedor != null) {
-            lbNombre.setText(vendedor.getNombre());
-            lbApellidos.setText(vendedor.getApellidos());
-            lbCedula.setText(vendedor.getCedula());
+        if (vendedor != null) {
+            System.out.println("Hola");
 
         } else {
 
+        }
+    }
+
+    @FXML
+    void btnRegistrarse(ActionEvent event) {
+        try {
+            App.setRoot("registroView");
+        } catch (IOException e) {
+            e.printStackTrace(); // Maneja la excepción adecuadamente
         }
     }
 }
