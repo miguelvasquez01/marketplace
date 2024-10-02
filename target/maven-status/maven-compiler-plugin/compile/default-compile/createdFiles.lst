@@ -1,0 +1,7 @@
+com\marketplace\model\EstadoProducto.class
+com\marketplace\model\Resena.class
+com\marketplace\model\Vendedor.class
+com\marketplace\model\Muro.class
+com\marketplace\model\Producto.class
+module-info.class
+com\marketplace\model\Comentario.class

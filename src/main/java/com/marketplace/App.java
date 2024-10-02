@@ -17,11 +17,25 @@ public class App extends Application {
 
     @SuppressWarnings("exports")
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("loginView"), 874, 782);
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("marketView.fxml"));
+        
+        scene = new Scene(root);
+        // Cargar el archivo CSS
+        scene.getStylesheets().add(getClass().getResource("/com/marketplace/styles/style.css").toExternalForm());
+
+        primaryStage.setTitle("Market");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+
+    // @SuppressWarnings("exports")
+    // @Override
+    // public void start(Stage stage) throws IOException {
+    //     scene = new Scene(loadFXML("marketView"), 874, 782);
+    //     stage.setScene(scene);
+    //     stage.show();
+    // }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
@@ -35,5 +49,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }

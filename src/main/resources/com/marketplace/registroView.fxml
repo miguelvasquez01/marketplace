@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="782.0" prefWidth="874.0" styleClass="backgroundColor" stylesheets="@../../../java/style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.RegistroController">
+<AnchorPane prefHeight="782.0" prefWidth="874.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.RegistroController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="782.0" stroke="BLACK" strokeType="INSIDE" width="874.0">
          <fill>
