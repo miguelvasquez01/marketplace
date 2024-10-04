@@ -1,0 +1,30 @@
+.boton {
+    -fx-background-color: rgb(224, 158, 158);
+    -fx-background-radius: 0em;
+}
+
+.boton:hover {
+    -fx-background-color: rgb(174, 110, 110);
+    -fx-background-radius: 1em;
+}
+
+.boton:pressed {
+    -fx-background-color: rgb(100, 80, 80);
+    -fx-background-radius: 1em;
+}
+
+.boton:focused {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-background-radius: 1em;
+}
+
+.crud-productos {
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 30;
+}
+
+.crud-botones {
+    -fx-background-color: #F16C31;
+    -fx-background-radius: 30;
+}

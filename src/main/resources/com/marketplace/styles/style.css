@@ -44,3 +44,7 @@
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 30;
 }
+
+.input {
+    -fx-border-width: 0 0 1 0;
+}

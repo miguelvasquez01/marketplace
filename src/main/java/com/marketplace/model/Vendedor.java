@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,7 +19,7 @@ public class Vendedor {
     private String apellidos;
     private String cedula;
     private String direccion;
-    private ArrayList<Producto> productos;
+    private List<Producto> productos;
     private ArrayList<Vendedor> contactos;
     private ArrayList<Resena> reseñas;
     private ArrayList<Vendedor> solicitudesDeContacto;

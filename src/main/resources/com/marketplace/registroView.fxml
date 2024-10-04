@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="782.0" prefWidth="874.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.RegistroController">
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.RegistroController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="782.0" stroke="BLACK" strokeType="INSIDE" width="874.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1200.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -30,38 +30,39 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Text fill="WHITE" layoutX="320.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrarse">
+      <Text fill="WHITE" layoutX="483.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrarse">
          <font>
             <Font size="48.0" />
          </font>
       </Text>
-      <TextField fx:id="tfNombre" layoutX="148.0" layoutY="247.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu nombre" style="-fx-background-color: #d9d9d9;" />
-      <Text fill="WHITE" layoutX="148.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+      <TextField fx:id="tfNombre" layoutX="310.0" layoutY="246.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu nombre" style="-fx-background-color: #d9d9d9;" />
+      <Text fill="WHITE" layoutX="310.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
          <font>
             <Font size="14.0" />
-         </font></Text>
-      <Button layoutX="143.0" layoutY="116.0" mnemonicParsing="false" onAction="#btnVolverAInicio" style="-fx-background-color: #00d9ff;" text="Volver a inicio" textFill="WHITE">
+         </font>
+      </Text>
+      <Button layoutX="91.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnVolverAInicio" style="-fx-background-color: #00d9ff;" text="Volver a inicio" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="148.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnCrearUsuario" prefHeight="65.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Crear usuario" textFill="WHITE">
+      <Button layoutX="310.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnCrearUsuario" prefHeight="65.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Crear usuario" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font></Button>
-      <TextField fx:id="tfApellidos" layoutX="148.0" layoutY="318.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tus apellidos" style="-fx-background-color: #d9d9d9;" />
-      <TextField fx:id="tfDireccion" layoutX="148.0" layoutY="467.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu direccion" style="-fx-background-color: #d9d9d9;" />
-      <TextField fx:id="tfCedula" layoutX="148.0" layoutY="391.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu cedula" style="-fx-background-color: #d9d9d9;" />
-      <Text fill="WHITE" layoutX="148.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos">
+      <TextField fx:id="tfApellidos" layoutX="310.0" layoutY="317.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tus apellidos" style="-fx-background-color: #d9d9d9;" />
+      <TextField fx:id="tfDireccion" layoutX="310.0" layoutY="466.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu direccion" style="-fx-background-color: #d9d9d9;" />
+      <TextField fx:id="tfCedula" layoutX="310.0" layoutY="390.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu cedula" style="-fx-background-color: #d9d9d9;" />
+      <Text fill="WHITE" layoutX="310.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="148.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula">
+      <Text fill="WHITE" layoutX="310.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="148.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion">
+      <Text fill="WHITE" layoutX="310.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirección">
          <font>
             <Font size="14.0" />
          </font>

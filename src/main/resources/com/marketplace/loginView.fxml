@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.LoginController">
+<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.LoginController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="782.0" stroke="BLACK" strokeType="INSIDE" width="874.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1200.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -37,38 +37,38 @@
             <Image url="@../../../../../../../../Users/juand/Downloads/images.png" />
          </image>
       </ImageView>
-      <Text id="txtKOMMERCIO" fill="WHITE" layoutX="296.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOMMERCIO">
+      <Text id="txtKOMMERCIO" fill="WHITE" layoutX="459.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOMMERCIO">
          <font>
             <Font size="48.0" />
          </font>
       </Text>
-      <Text id="txtIniciar Sesion" fill="WHITE" layoutX="333.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesion">
+      <Text id="txtIniciar Sesion" fill="WHITE" layoutX="507.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesion">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="148.0" layoutY="416.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Nombre de usuario" fill="WHITE" layoutX="148.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
+      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="310.0" layoutY="415.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Nombre de usuario" fill="WHITE" layoutX="310.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField id="tfCedula" fx:id="tfCedula" layoutX="148.0" layoutY="488.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cedula" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Cedula" fill="WHITE" layoutX="148.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula">
+      <TextField id="tfCedula" fx:id="tfCedula" layoutX="310.0" layoutY="487.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cedula" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Cedula" fill="WHITE" layoutX="310.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnEntrar" layoutX="148.0" layoutY="562.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Entrar" textFill="WHITE">
+      <Button id="btnEntrar" layoutX="310.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Entrar" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font></Button>
-      <Text id="txt no tienes una cuenta" fill="WHITE" layoutX="148.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
+      <Text id="txt no tienes una cuenta" fill="WHITE" layoutX="528.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnRegistrarse" layoutX="148.0" layoutY="665.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefWidth="75.0" style="-fx-background-color: #00d9ff;" text="Registrarse" textFill="WHITE" />
+      <Button id="btnRegistrarse" layoutX="562.0" layoutY="671.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefWidth="75.0" style="-fx-background-color: #00d9ff;" text="Registrarse" textFill="WHITE" />
    </children>
 
    
