@@ -34,6 +34,7 @@ public class App extends Application {
     public static void setRoot(String fxml) throws IOException {
         Parent newRoot = loadFXML(fxml);
         scene.setRoot(newRoot);
+        primaryStage.setScene(scene);//?
         primaryStage.sizeToScene();
     }
 

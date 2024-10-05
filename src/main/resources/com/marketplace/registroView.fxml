@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -45,13 +47,13 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button layoutX="310.0" layoutY="557.0" mnemonicParsing="false" onAction="#btnCrearUsuario" prefHeight="65.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Crear usuario" textFill="WHITE">
+      <Button layoutX="311.0" layoutY="589.0" mnemonicParsing="false" onAction="#btnCrearUsuario" prefHeight="65.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Crear usuario" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font></Button>
       <TextField fx:id="tfApellidos" layoutX="310.0" layoutY="317.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tus apellidos" style="-fx-background-color: #d9d9d9;" />
-      <TextField fx:id="tfDireccion" layoutX="310.0" layoutY="466.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu direccion" style="-fx-background-color: #d9d9d9;" />
-      <TextField fx:id="tfCedula" layoutX="310.0" layoutY="390.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu cedula" style="-fx-background-color: #d9d9d9;" />
+      <TextField fx:id="tfDireccion" layoutX="310.0" layoutY="466.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu dirección" style="-fx-background-color: #d9d9d9;" />
+      <TextField fx:id="tfCedula" layoutX="310.0" layoutY="390.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingresa tu cédula" style="-fx-background-color: #d9d9d9;" />
       <Text fill="WHITE" layoutX="310.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellidos">
          <font>
             <Font size="14.0" />
@@ -67,5 +69,14 @@
             <Font size="14.0" />
          </font>
       </Text>
+      <HBox alignment="CENTER" layoutX="394.0" layoutY="531.0" prefHeight="40.0" prefWidth="378.0">
+         <children>
+            <Label fx:id="lbAdvertencia" text="Texto de advertencia" textFill="#b91b1b" visible="false">
+               <font>
+                  <Font name="Cambria" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.marketplace.services;
 
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -11,7 +12,7 @@ public class AuthService {
 
     private static final String AUTH_URL = "http://localhost:8080/auth/Vendedor";
 
-    public Vendedor login(String username, String password) { // Cambiado para devolver un Vendedor
+    public Vendedor login(String username, String password) throws ConnectException {
         LoginRequest loginRequest = new LoginRequest(username, password);
 
         try {
@@ -35,10 +36,13 @@ public class AuthService {
                 // Deserializar la respuesta JSON en un objeto Vendedor
                 Vendedor vendedor = objectMapper.readValue(response.body(), Vendedor.class);
                 System.out.println("Login exitoso para: " + vendedor.getNombre());
-                return vendedor; // Devuelve el objeto Vendedor
+                return vendedor;
             } else {
-                System.out.println("Error de autenticación: " + response.body());
+                System.out.println("Error de autenticación: " + response.body());//Si no encuntra el vendedor
             }
+        } catch(ConnectException e) {
+            throw new ConnectException();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

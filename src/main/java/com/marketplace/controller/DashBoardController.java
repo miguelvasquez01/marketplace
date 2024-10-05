@@ -16,11 +16,10 @@ public class DashBoardController {
     @FXML
     private VBox contentVbox;
 
-    @SuppressWarnings("unused")
     private Vendedor vendedorAutenticado;
 
     @FXML
-    void btnCerrarSesión(ActionEvent event) throws IOException {
+    void btnCerrarSesion(ActionEvent event) throws IOException {
         App.setRoot("loginView");
     }
 

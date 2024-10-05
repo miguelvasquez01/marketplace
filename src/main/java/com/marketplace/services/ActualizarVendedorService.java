@@ -12,7 +12,7 @@ public class ActualizarVendedorService {
     
     private static final String URL = "http://localhost:8080/vendedores/actualizarVendedor/";
 
-    public void actualizar(Vendedor vendedor) { // Cambiado para devolver un Vendedor
+    public void actualizar(Vendedor vendedor) {
         try {
             // Convertir el objeto LoginRequest a JSON
             ObjectMapper objectMapper = new ObjectMapper();

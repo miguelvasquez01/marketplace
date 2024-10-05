@@ -84,32 +84,34 @@ public class MisProductosController implements Initializable {
         int row = 1;
     
         try {
-            for (Producto producto : productos) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(App.class.getResource("itemView.fxml"));
-                AnchorPane anchorPane = fxmlLoader.load();
-    
-                ItemController itemController = fxmlLoader.getController();
-                itemController.setData(producto, myListener);
-    
-                if (column == 3) {
-                    column = 0;
-                    row++;
+            if (productos != null) {
+                for (Producto producto : productos) {
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(App.class.getResource("itemView.fxml"));
+                    AnchorPane anchorPane = fxmlLoader.load();
+        
+                    ItemController itemController = fxmlLoader.getController();
+                    itemController.setData(producto, myListener);
+        
+                    if (column == 3) {
+                        column = 0;
+                        row++;
+                    }
+        
+                    gridPane.add(anchorPane, column++, row);
+        
+                    //Set grid width
+                    gridPane.setMinWidth(Region.USE_COMPUTED_SIZE);
+                    gridPane.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                    gridPane.setMaxWidth(Region.USE_PREF_SIZE);
+        
+                    //Set grid height
+                    gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
+                    gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                    gridPane.setMaxHeight(Region.USE_PREF_SIZE);
+        
+                    GridPane.setMargin(anchorPane, new Insets(10));
                 }
-    
-                gridPane.add(anchorPane, column++, row);
-    
-                //Set grid width
-                gridPane.setMinWidth(Region.USE_COMPUTED_SIZE);
-                gridPane.setPrefWidth(Region.USE_COMPUTED_SIZE);
-                gridPane.setMaxWidth(Region.USE_PREF_SIZE);
-    
-                //Set grid height
-                gridPane.setMinHeight(Region.USE_COMPUTED_SIZE);
-                gridPane.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                gridPane.setMaxHeight(Region.USE_PREF_SIZE);
-    
-                GridPane.setMargin(anchorPane, new Insets(10));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -135,7 +137,11 @@ public class MisProductosController implements Initializable {
     public void setVendedor(Vendedor vendedor) {//Este método se llama despues de initialize
         this.vendedorAutenticado = vendedor;
         this.productos = vendedor.getProductos();
-        System.out.println("Productos del vendedor: " + productos.size()); // Verifica si hay productos
+        if(productos != null) {
+            System.out.println("Productos del vendedor: " + productos.size()); // Verifica si hay productos
+        } else {
+            System.out.println("Vendedor sin productos");
+        }
         loadProductos();
     }
 }

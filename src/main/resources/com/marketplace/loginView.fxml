@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -42,33 +44,42 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <Text id="txtIniciar Sesion" fill="WHITE" layoutX="507.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesion">
+      <Text id="txtIniciar Sesion" fill="WHITE" layoutX="507.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesión">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="310.0" layoutY="415.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Nombre de usuario" fill="WHITE" layoutX="310.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
+      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="310.0" layoutY="350.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Nombre de usuario" fill="WHITE" layoutX="310.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField id="tfCedula" fx:id="tfCedula" layoutX="310.0" layoutY="487.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cedula" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Cedula" fill="WHITE" layoutX="310.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cedula">
+      <TextField id="tfCedula" fx:id="tfCedula" layoutX="310.0" layoutY="422.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cédula" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Cedula" fill="WHITE" layoutX="310.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnEntrar" layoutX="310.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Entrar" textFill="WHITE">
+      <Button id="btnEntrar" layoutX="311.0" layoutY="541.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Entrar" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font></Button>
-      <Text id="txt no tienes una cuenta" fill="WHITE" layoutX="528.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
+      <Text id="txt no tienes una cuenta" fill="WHITE" layoutX="527.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnRegistrarse" layoutX="562.0" layoutY="671.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefWidth="75.0" style="-fx-background-color: #00d9ff;" text="Registrarse" textFill="WHITE" />
+      <Button id="btnRegistrarse" layoutX="562.0" layoutY="660.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefWidth="75.0" style="-fx-background-color: #00d9ff;" text="Registrarse" textFill="WHITE" />
+      <HBox alignment="CENTER" layoutX="353.0" layoutY="475.0" prefHeight="55.0" prefWidth="491.0">
+         <children>
+            <Label fx:id="lbAdvertencia" text="Texto de Advertencia" textFill="#bc1e1e" visible="false">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 
    

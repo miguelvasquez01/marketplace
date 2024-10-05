@@ -1,5 +1,6 @@
 package com.marketplace.services;
 
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -11,7 +12,7 @@ public class RegisterService {
 
     private static final String AUTH_URL = "http://localhost:8080/vendedores/guardarVendedor";
 
-    public Vendedor register(String nombre,String apellidos, String cedula, String direccion) { // Cambiado para devolver un Vendedor
+    public boolean register(String nombre,String apellidos, String cedula, String direccion) throws ConnectException { // Cambiado para devolver un Vendedor
         Vendedor vendedor = Vendedor.builder().apellidos(apellidos).nombre(nombre).direccion(direccion).cedula(cedula).build();
 
         try {
@@ -32,17 +33,18 @@ public class RegisterService {
 
             // Manejar la respuesta
             if (response.statusCode() == 200) {
-                // Deserializar la respuesta JSON en un objeto Vendedor
-                Vendedor vendedorCreado = objectMapper.readValue(response.body(), Vendedor.class);
-                System.out.println("Login exitoso para: " + vendedorCreado.getNombre());
-                return vendedorCreado; // Devuelve el objeto Vendedor
+                System.out.println("Vendedor creado correctamente");
+                return true;
             } else {
-                System.out.println("Error de autenticación: " + response.body());
+                System.out.println("Error de creación de vendedor: " + response.body());
             }
+
+        } catch(ConnectException e) {
+            throw new ConnectException();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return null; // Si la autenticación falla, devuelve null
+        return false; //Si la cédula ya existe
     }
 }

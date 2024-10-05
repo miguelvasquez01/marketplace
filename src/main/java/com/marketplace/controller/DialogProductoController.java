@@ -59,19 +59,20 @@ public class DialogProductoController implements Initializable {
             int codigo = Integer.parseInt(codigoStr);
             double precio = Double.parseDouble(precioStr);
 
+            Boolean codigoRepetido = productos.stream().anyMatch(p -> p.getCodigo() == codigo);
+            if (codigoRepetido) {
+                advertencia.setText("Ya existe un producto con este código");
+                advertencia.setVisible(true);
+                return;
+            }
+
             Producto producto = Producto.builder().nombre(nombre)
                                               .codigo(codigo)
                                               .imagen(imagen)
                                               .categoria(categoria)
                                               .precio(precio)
                                               .build();
-
-            Boolean codigoRepetido = productos.stream().anyMatch(p -> p.getCodigo() == producto.getCodigo());
-            if (codigoRepetido) {
-                advertencia.setText("Ya existe un producto con este código");
-                advertencia.setVisible(true);
-                return;
-            }
+            
             this.producto = producto;
 
             Stage stage = (Stage)lbTitulo.getScene().getWindow();

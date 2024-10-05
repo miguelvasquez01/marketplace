@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.DashBoardController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -33,12 +32,19 @@
                   <Button mnemonicParsing="false" onAction="#btnMisContactos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" stylesheets="@styles/styleDashboard.css" text="Mis Contactos" textFill="WHITE" />
                   <Button mnemonicParsing="false" onAction="#btnEstadisticas" prefHeight="38.0" prefWidth="250.0" styleClass="boton" stylesheets="@styles/styleDashboard.css" text="Estadísticas" textFill="WHITE" />
                   <Button mnemonicParsing="false" onAction="#btnMiPerfil" prefHeight="38.0" prefWidth="250.0" styleClass="boton" stylesheets="@styles/styleDashboard.css" text="Mi Perfil" textFill="WHITE" />
-                  <Button mnemonicParsing="false" onAction="#btnCerrarSesión" prefHeight="38.0" prefWidth="250.0" styleClass="boton" stylesheets="@styles/styleDashboard.css" text="Cerrar Sesión" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" styleClass="boton" stylesheets="@styles/styleDashboard.css" text="Cerrar Sesión" textFill="WHITE" />
                </children>
             </VBox>
          </left>
          <center>
-            <VBox fx:id="contentVbox" prefHeight="720.0" prefWidth="250.0" BorderPane.alignment="CENTER" />
+            <VBox fx:id="contentVbox" alignment="CENTER" prefHeight="720.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Bienvenido a KOMMERCIO, tu red social de confianza" textFill="#000000be">
+                     <font>
+                        <Font name="Cambria" size="24.0" />
+                     </font>
+                  </Label>
+               </children></VBox>
          </center>
       </BorderPane>
    </children>
