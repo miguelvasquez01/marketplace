@@ -68,14 +68,20 @@
                   </ScrollPane>
                   <VBox prefHeight="570.0" prefWidth="175.0" style="-fx-border-color: orange; -fx-border-radius: 30;">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="151.0">
+                        <VBox alignment="CENTER" prefHeight="56.0" prefWidth="164.0">
                            <children>
-                              <Label text="Información del producto">
+                              <Label text="Información del">
                                  <font>
-                                    <Font name="Cambria" size="14.0" />
-                                 </font></Label>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="producto">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font>
+                              </Label>
                            </children>
-                        </HBox>
+                        </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
                            <children>
                               <HBox prefHeight="32.0" prefWidth="164.0">
@@ -89,12 +95,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbNombre" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -110,12 +116,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbCodigo" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -131,12 +137,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbImagen" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -152,12 +158,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbCategoria" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -173,12 +179,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Estado" />
+                                    <Label fx:id="lbPrecio" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -194,12 +200,12 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbFechaPublicacion" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
                            </VBox.margin>
                         </VBox>
                         <VBox prefHeight="43.0" prefWidth="164.0">
@@ -215,12 +221,33 @@
                               </HBox>
                               <HBox prefHeight="32.0" prefWidth="151.0">
                                  <children>
-                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                    <Label fx:id="lbMeGustas" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
                                  </children>
                               </HBox>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
+                              <Insets bottom="15.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Estado">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label fx:id="lbEstado" prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
                            </VBox.margin>
                         </VBox>
                      </children>

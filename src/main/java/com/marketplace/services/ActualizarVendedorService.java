@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.marketplace.model.Vendedor;
 
 public class ActualizarVendedorService {
@@ -16,6 +17,7 @@ public class ActualizarVendedorService {
         try {
             // Convertir el objeto LoginRequest a JSON
             ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.registerModule(new JavaTimeModule());
             String jsonRequest = objectMapper.writeValueAsString(vendedor);
 
             // Crear la solicitud HTTP POST

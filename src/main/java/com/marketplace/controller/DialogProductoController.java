@@ -1,10 +1,12 @@
 package com.marketplace.controller;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.marketplace.model.EstadoProducto;
 import com.marketplace.model.Producto;
 
 import javafx.event.ActionEvent;
@@ -59,11 +61,13 @@ public class DialogProductoController implements Initializable {
             int codigo = Integer.parseInt(codigoStr);
             double precio = Double.parseDouble(precioStr);
 
-            Boolean codigoRepetido = productos.stream().anyMatch(p -> p.getCodigo() == codigo);
-            if (codigoRepetido) {
-                advertencia.setText("Ya existe un producto con este código");
-                advertencia.setVisible(true);
-                return;
+            if (productos != null) {
+                Boolean codigoRepetido = productos.stream().anyMatch(p -> p.getCodigo() == codigo);
+                if (codigoRepetido) {
+                    advertencia.setText("Ya existe un producto con este código");
+                    advertencia.setVisible(true);
+                    return;
+                }
             }
 
             Producto producto = Producto.builder().nombre(nombre)
@@ -71,7 +75,10 @@ public class DialogProductoController implements Initializable {
                                               .imagen(imagen)//Verificar que sea ruta de imagen
                                               .categoria(categoria)
                                               .precio(precio)
-                                              .build();//Agregar la fecha de publicación y el estado
+                                              .fechaPublicacion(LocalDate.now())
+                                              .estado(EstadoProducto.PUBLICADO)
+                                              .build();
+                                              System.out.println(producto.getFechaPublicacion());
             
             this.producto = producto;
 

@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
@@ -30,10 +31,34 @@ public class MisProductosController implements Initializable {
     @FXML
     private GridPane gridPane;
 
+    @FXML
+    private Label lbCategoria;
+
+    @FXML
+    private Label lbCodigo;
+
+    @FXML
+    private Label lbFechaPublicacion;
+
+    @FXML
+    private Label lbImagen;
+
+    @FXML
+    private Label lbMeGustas;
+
+    @FXML
+    private Label lbNombre;
+
+    @FXML
+    private Label lbPrecio;
+
+    @FXML
+    private Label lbEstado;
+
     private ActualizarVendedorService actualizarVendedorService = new ActualizarVendedorService();
 
     private MyListener myListener;
-    private List<Producto> productos = new ArrayList<>();
+    private List<Producto> productos;
     private Vendedor vendedorAutenticado;
 
     @FXML
@@ -71,8 +96,17 @@ public class MisProductosController implements Initializable {
     }
 
     public void setChosenProducto(Producto producto) {
-        // lbNombreProducto.setText(producto.getNombre());
-        // lbPrecioProducto.setText("$"+producto.getPrecio());
+        lbNombre.setText(producto.getNombre());
+        lbCodigo.setText(Integer.toString(producto.getCodigo()));
+        lbImagen.setText(producto.getImagen());
+        lbCategoria.setText(producto.getCategoria());
+        lbPrecio.setText(Double.toString(producto.getPrecio()));
+
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        lbFechaPublicacion.setText(producto.getFechaPublicacion());
+
+        lbMeGustas.setText(Integer.toString(producto.getMeGustas()));
+        lbEstado.setText(producto.getEstado().toString());
         // image = new Image(getClass().getResourceAsStream(producto.getImagen()));
         // imgProducto.setImage(image);
         //añadir demás atributos
@@ -121,17 +155,15 @@ public class MisProductosController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if (productos.size() > 0) {
-            //setChosenProducto(productos.get(0));
-            myListener = new MyListener() {
+        //setChosenProducto(productos.get(0));
+        myListener = new MyListener() {
 
-                @Override
-                public void onClickListener(Producto producto) {
-                    setChosenProducto(producto);//Cuando haga click se ejecuta este método
-                }
+            @Override
+            public void onClickListener(Producto producto) {
+                setChosenProducto(producto);//Cuando haga click se ejecuta este método
+            }
                 
-            };
-        }
+        };
     }
 
     public void setVendedor(Vendedor vendedor) {//Este método se llama despues de initialize
@@ -140,6 +172,7 @@ public class MisProductosController implements Initializable {
         if(productos != null) {
             System.out.println("Productos del vendedor: " + productos.size()); // Verifica si hay productos
         } else {
+            this.productos = new ArrayList<>();//Si no hay crea un nuevo ArrayList
             System.out.println("Vendedor sin productos");
         }
         loadProductos();

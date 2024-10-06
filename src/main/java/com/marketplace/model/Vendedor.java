@@ -1,7 +1,6 @@
 package com.marketplace.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ import lombok.Builder;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 public class Vendedor {
 
     private String nombre;
@@ -25,4 +23,7 @@ public class Vendedor {
     private ArrayList<Vendedor> solicitudesDeContacto;
     private Muro muro;
 
+    public Vendedor() {
+        this.productos = new ArrayList<>();
+    }
 }
