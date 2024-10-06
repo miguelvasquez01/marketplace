@@ -16,7 +16,7 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="948.0">
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="948.0" style="-fx-border-radius: 30;">
                <children>
                   <Label text="¡Gestiona tus Productos!">
                      <font>
@@ -57,7 +57,7 @@
             </HBox>
             <HBox prefHeight="570.0" prefWidth="949.0">
                <children>
-                  <ScrollPane prefHeight="570.0" prefWidth="735.0" styleClass="transparent" stylesheets="@styles/style.css">
+                  <ScrollPane prefHeight="570.0" prefWidth="714.0" styleClass="transparent" stylesheets="@styles/style.css">
                      <content>
                         <GridPane fx:id="gridPane" prefHeight="8.0" prefWidth="27.0">
                            <rowConstraints>
@@ -66,24 +66,167 @@
                         </GridPane>
                      </content>
                   </ScrollPane>
-                  <VBox prefHeight="570.0" prefWidth="151.0">
+                  <VBox prefHeight="570.0" prefWidth="175.0" style="-fx-border-color: orange; -fx-border-radius: 30;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="52.0" prefWidth="151.0">
                            <children>
-                              <Label text="Información del producto" />
+                              <Label text="Información del producto">
+                                 <font>
+                                    <Font name="Cambria" size="14.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
-                        <HBox prefHeight="30.0" prefWidth="151.0">
+                        <VBox prefHeight="43.0" prefWidth="164.0">
                            <children>
-                              <Label text="Nombre" />
+                              <HBox prefHeight="32.0" prefWidth="164.0">
+                                 <children>
+                                    <Label text="Nombre">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
                            </children>
-                        </HBox>
-                        <HBox prefHeight="32.0" prefWidth="151.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
                            <children>
-                              <Label prefHeight="18.0" prefWidth="94.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Código">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
                            </children>
-                        </HBox>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Ruta de la imágen">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Categoría">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Precio">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Estado" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Fecha de publicación">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="164.0">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="154.0">
+                                 <children>
+                                    <Label text="Me Gustas">
+                                       <font>
+                                          <Font name="Cambria" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="151.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="138.0" style="-fx-border-color: orange;" styleClass="input" stylesheets="@styles/style.css" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="10.0" />
+                           </VBox.margin>
+                        </VBox>
                      </children>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" top="20.0" />
+                     </HBox.margin>
                   </VBox>
                </children>
                <VBox.margin>

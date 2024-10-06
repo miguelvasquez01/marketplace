@@ -30,7 +30,26 @@ public class DashBoardController {
 
     @FXML
     void btnMiPerfil(ActionEvent event) {
+        try {
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/marketplace/miPerfilView.fxml"));
+            Pane newPane = loader.load();
+
+            MiPerfilController miPerfilController = loader.getController();
+            miPerfilController.setVendedor(vendedorAutenticado);
+
+            //Vincular las propiedades de tamaño del nuevo pane con el contentPane
+            newPane.prefWidthProperty().bind(contentVbox.widthProperty());
+            newPane.prefHeightProperty().bind(contentVbox.heightProperty());
+
+
+            //Reemplazar el contenido del Pane con la nueva escena
+            contentVbox.getChildren().clear();
+            contentVbox.getChildren().add(newPane); 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -56,9 +75,7 @@ public class DashBoardController {
             //Reemplazar el contenido del Pane con la nueva escena
             contentVbox.getChildren().clear();
             contentVbox.getChildren().add(newPane);
-
             
-
         } catch (IOException e) {
             e.printStackTrace();
         }

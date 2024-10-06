@@ -68,10 +68,10 @@ public class DialogProductoController implements Initializable {
 
             Producto producto = Producto.builder().nombre(nombre)
                                               .codigo(codigo)
-                                              .imagen(imagen)
+                                              .imagen(imagen)//Verificar que sea ruta de imagen
                                               .categoria(categoria)
                                               .precio(precio)
-                                              .build();
+                                              .build();//Agregar la fecha de publicación y el estado
             
             this.producto = producto;
 

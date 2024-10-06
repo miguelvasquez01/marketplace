@@ -20,7 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
-        Parent root = FXMLLoader.load(getClass().getResource("loginView.fxml"));//Agregar excepcion de conexion
+        Parent root = FXMLLoader.load(getClass().getResource("dashboardView.fxml"));//Agregar excepcion de conexion
         
         scene = new Scene(root);
         // Cargar el archivo CSS

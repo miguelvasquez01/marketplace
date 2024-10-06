@@ -104,6 +104,7 @@ public class MarketController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ItemController itemController = fxmlLoader.getController();
+                //Le mando el producto y el listener con con la implementación del método
                 itemController.setData(productos.get(i), myListener);
 
                 if(column == 3) {

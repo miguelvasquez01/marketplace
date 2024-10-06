@@ -42,7 +42,7 @@ public class MisProductosController implements Initializable {
         Parent root = loader.load();
 
         DialogProductoController dialog = loader.getController();
-        dialog.initAtributos(productos);//Verifica que el código no se repita//Verificar que sea ruta de imagen
+        dialog.initAtributos(productos);//Verifica que el código no se repita
 
         Stage stage = new Stage();
         stage.setTitle("Agrega un producto");
