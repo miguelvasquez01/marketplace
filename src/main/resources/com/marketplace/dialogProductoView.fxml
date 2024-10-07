@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -37,7 +41,7 @@
                                     <Font name="Cambria" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="tfNombre" prefHeight="26.0" prefWidth="183.0" styleClass="transparent" stylesheets="@styles/style.css" />
+                              <TextField fx:id="tfNombre" prefHeight="26.0" prefWidth="207.0" styleClass="transparent" stylesheets="@styles/style.css" />
                            </children>
                            <VBox.margin>
                               <Insets left="20.0" top="20.0" />
@@ -53,7 +57,7 @@
                                     <Font name="Cambria" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="tfCodigo" prefHeight="26.0" prefWidth="183.0" styleClass="transparent" stylesheets="@styles/style.css" />
+                              <TextField fx:id="tfCodigo" prefHeight="26.0" prefWidth="196.0" styleClass="transparent" stylesheets="@styles/style.css" />
                            </children>
                            <VBox.margin>
                               <Insets left="20.0" top="20.0" />
@@ -69,7 +73,7 @@
                                     <Font name="Cambria" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="tfImagen" prefHeight="26.0" prefWidth="183.0" styleClass="transparent" stylesheets="@styles/style.css" />
+                              <TextField fx:id="tfImagen" prefHeight="26.0" prefWidth="212.0" styleClass="transparent" stylesheets="@styles/style.css" />
                            </children>
                            <VBox.margin>
                               <Insets left="20.0" top="20.0" />
@@ -85,7 +89,7 @@
                                     <Font name="Cambria" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="tfCategoria" prefHeight="26.0" prefWidth="183.0" styleClass="transparent" stylesheets="@styles/style.css" />
+                              <TextField fx:id="tfCategoria" prefHeight="26.0" prefWidth="197.0" styleClass="transparent" stylesheets="@styles/style.css" />
                            </children>
                            <VBox.margin>
                               <Insets left="20.0" top="20.0" />
@@ -101,7 +105,7 @@
                                     <Font name="Cambria" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="tfPrecio" prefHeight="26.0" prefWidth="183.0" styleClass="transparent" stylesheets="@styles/style.css" />
+                              <TextField fx:id="tfPrecio" prefHeight="26.0" prefWidth="206.0" styleClass="transparent" stylesheets="@styles/style.css" />
                            </children>
                            <VBox.margin>
                               <Insets left="20.0" top="20.0" />
@@ -111,6 +115,28 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="342.0" prefWidth="315.0">
                      <children>
+                        <VBox fx:id="vBoxEstado" alignment="TOP_CENTER" prefHeight="90.0" prefWidth="311.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="34.0" prefWidth="311.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="72.0" text="Estado">
+                                       <font>
+                                          <Font name="Cambria" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cbEstado" prefWidth="150.0" promptText="Seleccione el estado" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ImageView fitHeight="168.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/juanda.png" />
+                           </image>
+                        </ImageView>
                         <Label text="Juanda es gei" />
                         <HBox alignment="BOTTOM_CENTER" prefHeight="22.0" prefWidth="311.0">
                            <children>
@@ -130,9 +156,17 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#btnAceptar" prefHeight="34.0" prefWidth="92.0" styleClass="search-button" stylesheets="@styles/style.css" text="Aceptar" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#btnAceptar" prefHeight="34.0" prefWidth="92.0" stylesheets="@styles/style.css" text="Aceptar" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="search-button" />
+                        <String fx:value="shadow" />
+                     </styleClass></Button>
                   <Pane prefHeight="52.0" prefWidth="47.0" />
-                  <Button mnemonicParsing="false" onAction="#btnCancelar" prefHeight="33.0" prefWidth="99.0" styleClass="search-button" stylesheets="@styles/style.css" text="Cancelar" textFill="WHITE" />
+                  <Button mnemonicParsing="false" onAction="#btnCancelar" prefHeight="33.0" prefWidth="99.0" stylesheets="@styles/style.css" text="Cancelar" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="search-button" />
+                        <String fx:value="shadow" />
+                     </styleClass></Button>
                </children>
             </HBox>
          </children>

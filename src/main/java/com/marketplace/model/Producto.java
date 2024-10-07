@@ -25,16 +25,17 @@ public class Producto {
     private List<Comentario> comentarios;
     private int meGustas;
     
-    //Lo seteo como String para que pueda ser manejado como XML
+    //Lo mando como String para serializarlo correctamente en el servidor
     public String getFechaPublicacion() {
         return fechaPublicacion.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
-
+    
+    //Lo recibo como String y lo convierto a LocalDate
     public void setFechaPublicacion(String fecha) {
         if (fecha != null && !fecha.isEmpty()) {
             this.fechaPublicacion = LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         } else {
-            this.fechaPublicacion = null; // O manejarlo de otra forma, según tu lógica
+            this.fechaPublicacion = null;
         }
     }
 }

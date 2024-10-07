@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 
 import com.marketplace.App;
@@ -19,6 +20,9 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -56,6 +60,9 @@ public class MisProductosController implements Initializable {
     private Label lbEstado;
 
     private ActualizarVendedorService actualizarVendedorService = new ActualizarVendedorService();
+    
+    //Para eliminar y editar?
+    private Producto productoSeleccionado;
 
     private MyListener myListener;
     private List<Producto> productos;
@@ -67,6 +74,7 @@ public class MisProductosController implements Initializable {
         Parent root = loader.load();
 
         DialogProductoController dialog = loader.getController();
+        dialog.getvBoxEstado().setVisible(false);
         dialog.initAtributos(productos);//Verifica que el código no se repita
 
         Stage stage = new Stage();
@@ -86,30 +94,90 @@ public class MisProductosController implements Initializable {
     }
 
     @FXML
-    void btnEditarProducto(ActionEvent event) {
+    void btnEditarProducto(ActionEvent event) throws IOException {
+        
+        if (productoSeleccionado != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/marketplace/dialogProductoView.fxml"));
+            Parent root = loader.load();
 
+            DialogProductoController dialog = loader.getController();
+            dialog.getLbTitulo().setText("Actualiza un producto");
+            dialog.initAtributos(productos);//Verifica que el código no se repita
+            dialog.initLabels(productoSeleccionado);//Establece los labels
+
+            Stage stage = new Stage();
+            stage.setTitle("Actualiza un producto");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            
+            stage.setOnCloseRequest(e -> {// Aquí configuramos lo que sucede cuando el usuario cierra la ventana con la 'X'
+            dialog.setProducto(null); // Establecer el producto como null, CAMBIAR ESTA LÓGICA
+            });//Esto es por problemas de deseleccion de items
+            stage.showAndWait();
+
+            Producto p = dialog.getProducto();
+
+            if(p != null) {
+                this.productos.remove(productoSeleccionado);
+                this.productos.add(p);
+                this.vendedorAutenticado.setProductos(productos);
+                actualizarVendedorService.actualizar(vendedorAutenticado);
+                loadProductos();
+            }
+
+        } else {
+            System.out.println("Seleccione un producto");
+            Alert alerta = new Alert(AlertType.INFORMATION);
+            alerta.setTitle("Producto no seleccionado");
+            alerta.setHeaderText("Error en la operación");
+            alerta.setContentText("Por favor, seleccione un producto antes de continuar");
+            alerta.showAndWait();
+        }
     }
 
     @FXML
     void btnEliminarProducto(ActionEvent event) {
+        
+        if (productoSeleccionado != null) {
+            Alert alerta = new Alert(AlertType.CONFIRMATION);
+            alerta.setTitle("Eliminar Producto");
+            alerta.setHeaderText("Confirmación de operación");
+            alerta.setContentText("SE ELIMINARÁ SU PRODUCTO DE FORMA PERMANENTE");
+            Optional<ButtonType> resultado = alerta.showAndWait();
 
+            if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+                this.productos.remove(productoSeleccionado);
+                this.vendedorAutenticado.setProductos(productos);
+                actualizarVendedorService.actualizar(vendedorAutenticado);
+                loadProductos();
+                productoSeleccionado = null;//?
+                
+            } else {
+                System.out.println("El usuario canceló la operación.");
+            }
+            
+        } else {
+            System.out.println("Seleccione un producto");
+            Alert alerta = new Alert(AlertType.INFORMATION);
+            alerta.setTitle("Producto no seleccionado");
+            alerta.setHeaderText("Error en la operación");
+            alerta.setContentText("Por favor, seleccione un producto antes de continuar");
+            alerta.showAndWait();
+        }
     }
 
     public void setChosenProducto(Producto producto) {
+
+        this.productoSeleccionado = producto;//Para eliminar y editar
+
         lbNombre.setText(producto.getNombre());
         lbCodigo.setText(Integer.toString(producto.getCodigo()));
         lbImagen.setText(producto.getImagen());
         lbCategoria.setText(producto.getCategoria());
         lbPrecio.setText(Double.toString(producto.getPrecio()));
-
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         lbFechaPublicacion.setText(producto.getFechaPublicacion());
-
         lbMeGustas.setText(Integer.toString(producto.getMeGustas()));
         lbEstado.setText(producto.getEstado().toString());
-        // image = new Image(getClass().getResourceAsStream(producto.getImagen()));
-        // imgProducto.setImage(image);
-        //añadir demás atributos
     }
 
     private void loadProductos() {
@@ -159,7 +227,7 @@ public class MisProductosController implements Initializable {
         myListener = new MyListener() {
 
             @Override
-            public void onClickListener(Producto producto) {
+            public void onClickListener(Producto producto) {//Producto del item
                 setChosenProducto(producto);//Cuando haga click se ejecuta este método
             }
                 

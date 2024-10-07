@@ -45,6 +45,13 @@
     -fx-background-radius: 30;
 }
 
+.product-item-border {
+    -fx-border-color: #F16C31; /* Cambia el color del borde */
+    -fx-border-width: 2;   /* Cambia el grosor del borde */
+    -fx-padding: 5;        /* Espacio entre el borde y el contenido */
+    -fx-border-radius: 30;
+}
+
 .input {
     -fx-border-width: 0 0 1 0;
 }

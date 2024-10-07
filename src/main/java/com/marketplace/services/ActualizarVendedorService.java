@@ -37,7 +37,7 @@ public class ActualizarVendedorService {
                 // Vendedor vendedorCreado = objectMapper.readValue(response.body(), Vendedor.class);
                 // System.out.println("Actualización exitosa para: " + vendedorCreado.getNombre());
                 // return vendedorCreado; // Devuelve el objeto Vendedor
-                System.out.println("actualizado");
+                System.out.println("Vendedor actualizado");
                 System.out.println(jsonRequest);
             } else {
                 System.out.println("Error de autenticación: " + response.body());
