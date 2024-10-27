@@ -54,7 +54,26 @@ public class DashBoardController {
 
     @FXML
     void btnMisContactos(ActionEvent event) {
+        try {
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/marketplace/misContactosView.fxml"));
+            Pane newPane = loader.load();
+
+            MisContactosController misContactosController = loader.getController();
+            misContactosController.setVendedor(vendedorAutenticado);
+
+            //Vincular las propiedades de tamaño del nuevo pane con el contentPane
+            newPane.prefWidthProperty().bind(contentVbox.widthProperty());
+            newPane.prefHeightProperty().bind(contentVbox.heightProperty());
+
+
+            //Reemplazar el contenido del Pane con la nueva escena
+            contentVbox.getChildren().clear();
+            contentVbox.getChildren().add(newPane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

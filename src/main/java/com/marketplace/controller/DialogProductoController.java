@@ -55,51 +55,67 @@ public class DialogProductoController implements Initializable {
 
     @FXML
     void btnAceptar(ActionEvent event) {
-
+    
         LocalDate fechaPublicacion = LocalDate.now();
         EstadoProducto estado = EstadoProducto.PUBLICADO;
-
-        if (producto != null) {//Si voy a editar el producto
+    
+        if (producto != null) { //Si estamos editando un producto
             fechaPublicacion = LocalDate.parse(producto.getFechaPublicacion(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            estado = (EstadoProducto) cbEstado.getValue();
+            estado = cbEstado.getValue();
         }
-
+    
         String nombre = tfNombre.getText();
         String codigoStr = tfCodigo.getText();
         String imagen = tfImagen.getText();
         String categoria = tfCategoria.getText();
         String precioStr = tfPrecio.getText();
-
+    
         if (!validarCampos(nombre, codigoStr, imagen, categoria, precioStr)) {
-            return; //Valida que rellene todos los campos y números correctos
+            return; //Valida que todos los campos estén correctamente rellenados y números correctos
         }
-
+    
         int codigo = Integer.parseInt(codigoStr);
         double precio = Double.parseDouble(precioStr);
-
+    
+        //Si productos no es nulo y estamos creando un nuevo producto o cambiando el código de uno existente
         if (productos != null) {
-            Boolean codigoRepetido = productos.stream().anyMatch(p -> p.getCodigo() == codigo);
+            boolean codigoRepetido = productos.stream()
+                    .anyMatch(p -> p.getCodigo() == codigo && (producto == null || p != producto));//Evitar duplicados en edición
+    
             if (codigoRepetido) {
                 advertencia.setText("Ya existe un producto con este código");
                 advertencia.setVisible(true);
                 return;
             }
         }
+    
+        if (producto != null) { // Si es una edición, actualizamos los valores
+            producto.setNombre(nombre);
+            producto.setCodigo(codigo);
+            producto.setImagen(imagen);
+            producto.setCategoria(categoria);
+            producto.setPrecio(precio);
+            producto.setFechaPublicacion(fechaPublicacion.toString());
+            producto.setEstado(estado);
+        } else { // Si es un nuevo producto, lo creamos
+            Producto nuevoProducto = Producto.builder()
+                    .nombre(nombre)
+                    .codigo(codigo)
+                    .imagen(imagen)
+                    .categoria(categoria)
+                    .precio(precio)
+                    .fechaPublicacion(fechaPublicacion)
+                    .estado(estado)
+                    .build();
+    
+            this.producto = nuevoProducto;
+        }
+        MisProductosController.productoSeleccionado = null;
 
-        Producto producto = Producto.builder().nombre(nombre)
-                                              .codigo(codigo)
-                                              .imagen(imagen)//Verificar que sea ruta de imagen
-                                              .categoria(categoria)
-                                              .precio(precio)
-                                              .fechaPublicacion(fechaPublicacion)
-                                              .estado(estado)//Agregar me gustas?
-                                              .build();
-            
-        this.producto = producto;
-
-        Stage stage = (Stage)lbTitulo.getScene().getWindow();
+        Stage stage = (Stage) lbTitulo.getScene().getWindow();
         stage.close();
     }
+    
 
     @FXML
     void btnCancelar(ActionEvent event) {
@@ -114,7 +130,6 @@ public class DialogProductoController implements Initializable {
 
     public void initLabels(Producto producto) {
         this.producto = producto;
-        this.productos.remove(producto);
 
         tfNombre.setText(producto.getNombre());
         tfCodigo.setText(Integer.toString(producto.getCodigo()));

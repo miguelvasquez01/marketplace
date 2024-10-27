@@ -29,6 +29,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MisProductosController implements Initializable {
 
@@ -62,7 +63,7 @@ public class MisProductosController implements Initializable {
     private ActualizarVendedorService actualizarVendedorService = new ActualizarVendedorService();
     
     //Para eliminar y editar?
-    private Producto productoSeleccionado;
+    static Producto productoSeleccionado;
 
     private MyListener myListener;
     private List<Producto> productos;
@@ -78,9 +79,9 @@ public class MisProductosController implements Initializable {
         dialog.initAtributos(productos);//Verifica que el código no se repita
 
         Stage stage = new Stage();
-        stage.setTitle("Agrega un producto");
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.showAndWait();
 
         Producto p = dialog.getProducto();
@@ -106,20 +107,15 @@ public class MisProductosController implements Initializable {
             dialog.initLabels(productoSeleccionado);//Establece los labels
 
             Stage stage = new Stage();
-            stage.setTitle("Actualiza un producto");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
-            
-            stage.setOnCloseRequest(e -> {// Aquí configuramos lo que sucede cuando el usuario cierra la ventana con la 'X'
-            dialog.setProducto(null); // Establecer el producto como null, CAMBIAR ESTA LÓGICA
-            });//Esto es por problemas de deseleccion de items
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.showAndWait();
 
             Producto p = dialog.getProducto();
 
             if(p != null) {
-                this.productos.remove(productoSeleccionado);
-                this.productos.add(p);
+                actualizarProducto(p);
                 this.vendedorAutenticado.setProductos(productos);
                 actualizarVendedorService.actualizar(vendedorAutenticado);
                 loadProductos();
@@ -168,7 +164,7 @@ public class MisProductosController implements Initializable {
 
     public void setChosenProducto(Producto producto) {
 
-        this.productoSeleccionado = producto;//Para eliminar y editar
+        MisProductosController.productoSeleccionado = producto;//Para eliminar y editar
 
         lbNombre.setText(producto.getNombre());
         lbCodigo.setText(Integer.toString(producto.getCodigo()));
@@ -244,5 +240,20 @@ public class MisProductosController implements Initializable {
             System.out.println("Vendedor sin productos");
         }
         loadProductos();
+    }
+
+    private void actualizarProducto(Producto p) {
+        for (Producto prod : productos) {
+            if (prod.getCodigo() == p.getCodigo()) {
+                // Actualizar directamente los atributos del producto encontrado
+                prod.setNombre(p.getNombre());
+                prod.setImagen(p.getImagen());
+                prod.setCategoria(p.getCategoria());
+                prod.setPrecio(p.getPrecio());
+                prod.setEstado(p.getEstado());
+                prod.setFechaPublicacion(p.getFechaPublicacion());
+                break; // Salir del bucle una vez que se actualice el producto
+            }
+        }
     }
 }
