@@ -7,70 +7,43 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.LoginController">
+<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.LoginController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1200.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.4627451002597809" green="0.3686274588108063" blue="0.8078431487083435" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.12156862765550613" green="0.6823529601097107" blue="0.7803921699523926" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <ImageView blendMode="MULTIPLY" fitHeight="144.0" fitWidth="153.0" layoutX="354.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../Users/juand/Downloads/images.png" />
-         </image>
-      </ImageView>
-      <Text id="txtKOMMERCIO" fill="WHITE" layoutX="459.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOMMERCIO">
+      <Text id="txtKOMMERCIO" layoutX="458.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOMMERCIO">
          <font>
             <Font size="48.0" />
          </font>
       </Text>
-      <Text id="txtIniciar Sesion" fill="WHITE" layoutX="507.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesión">
+      <Text id="txtIniciar Sesion" layoutX="508.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesión">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="310.0" layoutY="350.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Nombre de usuario" fill="WHITE" layoutX="310.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
+      <TextField id="tfNombreUsuario" fx:id="tfNombreUsuario" layoutX="311.0" layoutY="377.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su nombre de usuario" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Nombre de usuario" layoutX="311.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de usuario">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField id="tfCedula" fx:id="tfCedula" layoutX="310.0" layoutY="422.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cédula" style="-fx-background-color: d9d9d9;" />
-      <Text id="txt Cedula" fill="WHITE" layoutX="310.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula">
+      <TextField id="tfCedula" fx:id="tfCedula" layoutX="311.0" layoutY="455.0" prefHeight="40.0" prefWidth="578.0" promptText="Ingrese su cédula" style="-fx-background-color: d9d9d9;" />
+      <Text id="txt Cedula" layoutX="311.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnEntrar" layoutX="311.0" layoutY="541.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #00d9ff;" text="Entrar" textFill="WHITE">
+      <Button id="btnEntrar" layoutX="311.0" layoutY="541.0" mnemonicParsing="false" onAction="#btnEntrar" prefHeight="60.0" prefWidth="578.0" stylesheets="@styles/style.css" text="Entrar" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font></Button>
-      <Text id="txt no tienes una cuenta" fill="WHITE" layoutX="527.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
+      <Text id="txt no tienes una cuenta" layoutX="527.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿No tienes una cuenta?">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Button id="btnRegistrarse" layoutX="562.0" layoutY="660.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefWidth="75.0" style="-fx-background-color: #00d9ff;" text="Registrarse" textFill="WHITE" />
+      <Button id="btnRegistrarse" layoutX="506.0" layoutY="660.0" mnemonicParsing="false" onAction="#btnRegistrarse" prefHeight="44.0" prefWidth="185.0" stylesheets="@styles/style.css" text="Registrarse" textFill="WHITE" />
       <HBox alignment="CENTER" layoutX="353.0" layoutY="475.0" prefHeight="55.0" prefWidth="491.0">
          <children>
             <Label fx:id="lbAdvertencia" text="Texto de Advertencia" textFill="#bc1e1e" visible="false">
@@ -80,6 +53,11 @@
             </Label>
          </children>
       </HBox>
+      <ImageView blendMode="MULTIPLY" fitHeight="150.0" fitWidth="200.0" layoutX="521.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/Screenshot_14.png" />
+         </image>
+      </ImageView>
    </children>
 
    

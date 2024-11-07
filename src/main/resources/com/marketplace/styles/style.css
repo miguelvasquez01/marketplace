@@ -55,3 +55,32 @@
 .input {
     -fx-border-width: 0 0 1 0;
 }
+
+/* Estilo para botones con color #FF7043 */
+.button {
+    -fx-background-color: #FF7043; /* Color de fondo del botón */
+    -fx-text-fill: white; /* Color del texto en el botón */
+    -fx-border-radius: 15px; /* Bordes redondeados */
+    -fx-border-width: 2px; /* Grosor del borde */
+    -fx-border-color: #FF7043; /* Borde en el mismo tono */
+    -fx-border-style: solid; /* Borde sólido */
+    -fx-padding: 10px 20px; /* Espaciado interno (más grande para un botón más estilizado) */
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2); /* Sombra interna suave */
+    -fx-background-radius: 15px; /* Fondo redondeado */
+}
+
+/* Estilo para el botón cuando está presionado */
+.button:pressed {
+    -fx-background-color: #D85F2B; /* Un tono más oscuro cuando el botón se presiona */
+    -fx-border-color: #D85F2B; /* El borde también cambia a un tono más oscuro */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 0, 2); /* Sombra interna más pronunciada */
+}
+
+/* Estilo para el botón cuando está enfocado (con el mouse) */
+.button:hover {
+    -fx-background-color: #FF8A65; /* Color ligeramente más claro al pasar el mouse */
+    -fx-border-color: #FF8A65; /* Borde más claro */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 0); /* Efecto suave */
+}
