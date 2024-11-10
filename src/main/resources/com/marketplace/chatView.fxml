@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.marketplace.controller.ChatView">
+    <TextArea fx:id="chatArea" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="572.0" wrapText="true" />
+    <TextField fx:id="messageField" layoutX="14.0" layoutY="370.0" prefWidth="500.0" promptText="Escribe tu mensaje aquí..." />
+    <Button layoutX="520.0" layoutY="370.0" onAction="#EnviarMensaje" text="Enviar" />
+</AnchorPane>

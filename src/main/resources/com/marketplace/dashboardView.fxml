@@ -66,6 +66,16 @@
                         <String fx:value="boton" />
                         <String fx:value="button" />
                      </styleClass></Button>
+                  <Button mnemonicParsing="false" onAction="#btnChat" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Chat en linea" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/styleDashboard.css" />
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="boton" />
+                        <String fx:value="button" />
+                     </styleClass>
+                  </Button>
                   <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Cerrar Sesión" textFill="WHITE">
                      <stylesheets>
                         <URL value="@styles/styleDashboard.css" />
