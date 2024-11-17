@@ -1,13 +1,11 @@
 module com.marketplace {
-    requires javafx.controls;
     requires javafx.fxml;
-    requires java.base;
     requires lombok;
-    requires java.net.http;
     // Para manejar JSON
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.datatype.jsr310;
-    requires javafx.graphics;
+    requires javafx.web;
+    requires java.net.http;
 
     opens com.marketplace.controller to javafx.fxml;
     opens com.marketplace.model to javafx.base;
