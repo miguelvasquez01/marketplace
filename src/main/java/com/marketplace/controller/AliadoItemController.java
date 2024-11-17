@@ -1,5 +1,7 @@
 package com.marketplace.controller;
 
+import java.util.ArrayList;
+
 import com.marketplace.model.Vendedor;
 import com.marketplace.services.ActualizarVendedorService;
 
@@ -37,16 +39,25 @@ public class AliadoItemController {
     
 
     public void setData(Vendedor aliado, Vendedor vendedorAutenticado) {
+
+        ArrayList<Vendedor> solicitudes = aliado.getSolicitudesDeContacto();
+        if (solicitudes == null) {
+            solicitudes = new ArrayList<>();
+            aliado.setSolicitudesDeContacto(solicitudes);
+        }
         try {
             this.aliado = aliado;
             this.vendedorAutenticado = vendedorAutenticado;
 
             lbNombre.setText(aliado.getNombre() + " " + aliado.getApellidos());
-            lbMeGustas.setText(Integer.toString(aliado.getMuro().getMeGustas()));
+            lbMeGustas.setText("");//Integer.toString(aliado.getMuro().getMeGustas()) cuando el muro no sea null poner esto
 
-            // Verificar si ya se ha enviado una solicitud de contacto
-            if (aliado.getSolicitudesDeContacto().contains(vendedorAutenticado)) {
-                // Deshabilitar el botón y cambiar su texto y estilo si ya se envió la solicitud
+            boolean solicitudYaEnviada = solicitudes.stream()
+                .anyMatch(solicitud -> solicitud.getCedula().equals(vendedorAutenticado.getCedula()));
+
+            if (solicitudYaEnviada) {
+                System.out.println("loololololol");
+                System.out.println("Solicitud ya enviada");
                 btnAgregar.setDisable(true);
                 btnAgregar.setText("Pendiente");
                 btnAgregar.setStyle("-fx-background-color: grey;");

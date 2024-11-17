@@ -25,5 +25,7 @@ public class Vendedor {
 
     public Vendedor() {
         this.productos = new ArrayList<>();
+        this.contactos = new ArrayList<>();
+        this.solicitudesDeContacto = new ArrayList<>();
     }
 }

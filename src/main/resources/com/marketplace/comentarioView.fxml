@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.ComentarioController">
+   <children>
+      <Label layoutX="95.0" layoutY="23.0" text="Comentarios">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listaComentarios" layoutX="14.0" layoutY="55.0" prefHeight="262.0" prefWidth="262.0" />
+      <TextField fx:id="tfComentario" layoutX="14.0" layoutY="349.0" prefHeight="26.0" prefWidth="201.0" />
+      <Button layoutX="223.0" layoutY="349.0" mnemonicParsing="false" onAction="#btnEnviar" text="Enviar" />
+   </children>
+</AnchorPane>

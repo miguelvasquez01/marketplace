@@ -59,4 +59,8 @@ public class ItemController {
             System.out.println("No se encontró la ruta de la imágen de uno o varios de los productos");
         }
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
 }

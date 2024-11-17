@@ -51,7 +51,7 @@
                               <Font name="Cambria" size="18.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="search-button" stylesheets="@styles/style.css" text="Buscar" textFill="WHITE" />
+                        <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="94.0" styleClass="search-button" stylesheets="@styles/style.css" text="Buscar" textFill="WHITE" />
                      </children>
                      <styleClass>
                         <String fx:value="search-box" />
@@ -97,23 +97,26 @@
                         </ImageView>
                         <HBox prefHeight="43.0" prefWidth="299.0">
                            <children>
-                              <Label prefHeight="58.0" prefWidth="240.0" text="Categoría" textFill="WHITE">
+                              <Label prefHeight="40.0" prefWidth="200.0" text="Categoría" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria" size="28.0" />
+                                    <Font name="Cambria" size="24.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label prefHeight="58.0" prefWidth="240.0" text="Tecnología" textFill="WHITE">
+                              <Label fx:id="lbCategoria" prefHeight="58.0" prefWidth="240.0" text="Tecnología" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria" size="28.0" />
+                                    <Font name="Cambria" size="24.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="35.0" prefWidth="290.0">
                            <children>
@@ -122,25 +125,28 @@
                         </HBox>
                         <HBox prefHeight="43.0" prefWidth="299.0">
                            <children>
-                              <Label prefHeight="58.0" prefWidth="240.0" text="Estado" textFill="WHITE">
+                              <Label prefHeight="40.0" prefWidth="218.0" text="Estado" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria" size="28.0" />
+                                    <Font name="Cambria" size="24.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label prefHeight="43.0" prefWidth="258.0" text="PUBLICADO" textFill="WHITE">
+                              <Label fx:id="lbEstado" prefHeight="43.0" prefWidth="258.0" text="PUBLICADO" textFill="WHITE">
                                  <font>
-                                    <Font name="Cambria" size="28.0" />
+                                    <Font name="Cambria" size="24.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets right="20.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </HBox>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="comprar-button" stylesheets="@styles/style.css" text="COMPRAR" textFill="#828282">
+                        <Button fx:id="btnComprarAtributo" mnemonicParsing="false" onAction="#btnComprar" prefHeight="40.0" prefWidth="250.0" styleClass="comprar-button" stylesheets="@styles/style.css" text="COMPRAR" textFill="#828282">
                            <VBox.margin>
                               <Insets bottom="20.0" top="30.0" />
                            </VBox.margin>
@@ -148,6 +154,29 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Button>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="299.0">
+                           <children>
+                              <Button fx:id="btnComentarAtributo" mnemonicParsing="false" onAction="#btnComentar" prefHeight="44.0" prefWidth="114.0" text="Comentar">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Pane prefHeight="44.0" prefWidth="27.0" />
+                              <Button fx:id="btnLikeAtributo" mnemonicParsing="false" onAction="#btnLike" prefHeight="44.0" prefWidth="82.0" text="Like">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label fx:id="lbLike" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
                      <styleClass>
                         <String fx:value="chosen-product-card" />
@@ -166,20 +195,23 @@
                         <Insets left="20.0" right="20.0" />
                      </VBox.margin>
                      <children>
-                        <Label prefHeight="30.0" prefWidth="210.0" text="Productos de Carlos" textFill="#878787">
+                        <Label fx:id="lbNombreVendedor" prefHeight="30.0" prefWidth="210.0" text="Productos de Carlos" textFill="#878787">
                            <font>
                               <Font name="Cambria" size="24.0" />
                            </font>
                         </Label>
                         <Pane prefHeight="55.0" prefWidth="362.0" HBox.hgrow="ALWAYS" />
-                        <Label prefHeight="50.0" prefWidth="84.0" text="Mi Cuenta" textFill="#878787">
+                        <Button mnemonicParsing="false" onAction="#btnVolver" prefHeight="22.0" prefWidth="146.0" styleClass="search-button" stylesheets="@styles/style.css" text="Volver al inicio">
                            <font>
-                              <Font name="Cambria" size="18.0" />
+                              <Font name="Cambria" size="13.0" />
                            </font>
-                        </Label>
-                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <ImageView fitHeight="38.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@assets/icons/icons8-usuario-24.png" />
+                              <Image url="@assets/icons/home.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -204,7 +236,7 @@
                               </VBox>
                               <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@assets/icons/icons8-usuario-24.png" />
+                                    <Image url="@assets/icons/user-icon.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -228,7 +260,7 @@
                               </VBox>
                               <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@assets/icons/icons8-usuario-24.png" />
+                                    <Image url="@assets/icons/user-icon.png" />
                                  </image>
                               </ImageView>
                            </children>

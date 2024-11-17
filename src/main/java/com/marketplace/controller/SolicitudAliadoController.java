@@ -68,12 +68,12 @@ public class SolicitudAliadoController implements Initializable {
     public void setVendedorAutenticado(Vendedor vendedor) {
         this.vendedorAutenticado = vendedor;
         this.solicitudes = vendedorAutenticado.getSolicitudesDeContacto();
-        //Si no sirve poner loadAliados aquí
+        loadAliados();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        loadAliados();
+        //loadAliados() no sirve aquí
     }
 }

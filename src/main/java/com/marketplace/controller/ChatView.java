@@ -22,6 +22,7 @@ public class ChatView {
     private BufferedReader in;
 
 
+    @SuppressWarnings("unused")
     private Vendedor vendedorAutenticado;
 
     public void initialize() {

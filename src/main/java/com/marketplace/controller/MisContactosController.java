@@ -72,7 +72,7 @@ public class MisContactosController {
                     AnchorPane anchorPane = fxmlLoader.load();
         
                     ContactoController contactoController = fxmlLoader.getController();
-                    contactoController.setData(contacto);
+                    contactoController.setData(contacto, vendedorAutenticado);
         
                     if (column == 1) {
                         column = 0;
@@ -103,5 +103,6 @@ public class MisContactosController {
         this.vendedorAutenticado = vendedor;
         //Setear los contactos
         this.contactos = vendedorAutenticado.getContactos();
+        loadVendedores();
     }
 }

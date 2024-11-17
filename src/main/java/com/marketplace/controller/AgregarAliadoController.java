@@ -76,6 +76,7 @@ public class AgregarAliadoController implements Initializable {
     public void setAliados() {
         try {
             this.aliados = getAllVendedoresService.getAllVendedores();
+
         } catch (ConnectException e) {
             e.printStackTrace();
         }
@@ -83,9 +84,11 @@ public class AgregarAliadoController implements Initializable {
 
     public void setVendedorAutenticado(Vendedor vendedor) {
         this.vendedorAutenticado = vendedor;
+        this.contactos = vendedorAutenticado.getContactos();
         if(contactos == null) {
             this.contactos = new ArrayList<>();//Si no hay crea un nuevo ArrayList
         }
+        this.aliados.removeIf(v -> vendedorAutenticado.getCedula().equals(v.getCedula()));
         loadAliados();
     }
 

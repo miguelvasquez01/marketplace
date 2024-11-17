@@ -1,5 +1,7 @@
 package com.marketplace.controller;
 
+import java.util.ArrayList;
+
 import com.marketplace.model.Vendedor;
 import com.marketplace.services.ActualizarVendedorService;
 
@@ -9,8 +11,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 
 public class SolicitudItemController {
+
+    @FXML
+    private HBox hBoxForRemove;
 
     @FXML
     private Label lbMeGustas;
@@ -46,16 +52,23 @@ public class SolicitudItemController {
     
 
     public void setData(Vendedor aliado, Vendedor vendedorAutenticado) {
+
+        ArrayList<Vendedor> contactos = vendedorAutenticado.getContactos();
+        if (contactos == null) {
+            contactos = new ArrayList<>();
+            vendedorAutenticado.setContactos(contactos);
+        }
         try {
             this.aliado = aliado;
             this.vendedorAutenticado = vendedorAutenticado;
-            this.anchorPane = (AnchorPane) lbNombre.getParent(); // Obtener el AnchorPane actual
+            this.anchorPane = (AnchorPane) hBoxForRemove.getParent(); // Obtener el AnchorPane actual
 
             lbNombre.setText(aliado.getNombre() + " " + aliado.getApellidos());
-            lbMeGustas.setText(Integer.toString(aliado.getMuro().getMeGustas()));
+            lbMeGustas.setText("");//Integer.toString(aliado.getMuro().getMeGustas()) cuando el muro no sea null poner esto
 
         } catch (NullPointerException e) {
             System.out.println("Hay algo nulo en los vendedores (Muro)");
+            e.printStackTrace();
         }
     }
 
