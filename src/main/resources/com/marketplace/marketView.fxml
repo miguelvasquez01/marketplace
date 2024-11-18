@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.MarketController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.MarketController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -218,53 +218,7 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="95.0" prefWidth="360.0" styleClass="comentarios-card" stylesheets="@styles/style.css">
-                           <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="234.0">
-                                 <children>
-                                    <Label prefHeight="30.0" prefWidth="210.0" text="Comentar(opcional)" textFill="#878787">
-                                       <font>
-                                          <Font name="Cambria Bold" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="30.0" prefWidth="210.0" text="- comentario1" textFill="#878787">
-                                       <font>
-                                          <Font name="Cambria" size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@assets/icons/user-icon.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </HBox>
                         <Pane prefHeight="100.0" prefWidth="74.0" HBox.hgrow="ALWAYS" />
-                        <HBox alignment="CENTER" prefHeight="95.0" prefWidth="360.0" styleClass="resenas-card" stylesheets="@styles/style.css">
-                           <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="210.0">
-                                 <children>
-                                    <Label prefHeight="30.0" prefWidth="210.0" text="Reseña(opcional)" textFill="#878787">
-                                       <font>
-                                          <Font name="Cambria Bold" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="30.0" prefWidth="210.0" text="- reseña 1" textFill="#878787">
-                                       <font>
-                                          <Font name="Cambria" size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <ImageView fitHeight="64.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@assets/icons/user-icon.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </HBox>
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />

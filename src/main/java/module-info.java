@@ -1,5 +1,7 @@
 module com.marketplace {
     requires javafx.fxml;
+    requires javafx.controls;
+    requires javafx.graphics;
     requires lombok;
     // Para manejar JSON
     requires com.fasterxml.jackson.databind;

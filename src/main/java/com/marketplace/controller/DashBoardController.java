@@ -25,6 +25,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 
 public class DashBoardController {
     
@@ -196,6 +198,25 @@ public class DashBoardController {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void btnMapa(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/marketplace/mapaView.fxml"));
+            AnchorPane mapaView = loader.load();
+            
+            contentVbox.getChildren().clear();
+            contentVbox.getChildren().add(mapaView);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al cargar el mapa");
+            alert.setContentText("No se pudo cargar la vista del mapa: " + e.getMessage());
+            alert.showAndWait();
         }
     }
 

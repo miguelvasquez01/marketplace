@@ -9,17 +9,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marketplace.controller.DashBoardController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="250.0" style="-fx-background-color: #D3D3D3;" BorderPane.alignment="CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="250.0" spacing="0" style="-fx-background-color: #D3D3D3;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="100.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
-                        <Insets top="30.0" />
+                        <Insets bottom="10.0" top="30.0" />
                      </VBox.margin>
                   </ImageView>
                   <Label prefHeight="50.0" prefWidth="222.0" text="KOMMERCIO">
@@ -27,64 +28,53 @@
                         <Font name="Cambria Bold" size="36.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="20.0" top="20.0" />
+                        <Insets bottom="20.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#btnMisProductos" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Mis Productos" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnMisProductos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Productos" textFill="WHITE">
                      <stylesheets>
                         <URL value="@styles/styleDashboard.css" />
                         <URL value="@styles/style.css" />
                      </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass></Button>
-                  <Button mnemonicParsing="false" onAction="#btnMisContactos" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF043;" text="Mis Contactos" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass></Button>
-                  <Button mnemonicParsing="false" onAction="#btnEstadisticas" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Estadísticas" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass></Button>
-                  <Button mnemonicParsing="false" onAction="#btnMiPerfil" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Mi Perfil" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass></Button>
-                  <Button mnemonicParsing="false" onAction="#btnChat" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Chat en linea" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: #FF7043;" text="Cerrar Sesión" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnMisContactos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Contactos" textFill="WHITE">
                      <stylesheets>
                         <URL value="@styles/styleDashboard.css" />
                         <URL value="@styles/style.css" />
                      </stylesheets>
-                     <styleClass>
-                        <String fx:value="boton" />
-                        <String fx:value="button" />
-                     </styleClass></Button>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnEstadisticas" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Estadísticas" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/styleDashboard.css" />
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnMiPerfil" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Perfil" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnChat" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Chat en linea" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/styleDashboard.css" />
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnMapa" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Ubicación" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Cerrar Sesión" textFill="WHITE">
+                     <stylesheets>
+                        <URL value="@styles/styleDashboard.css" />
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </left>
