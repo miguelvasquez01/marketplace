@@ -31,44 +31,39 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#btnMisProductos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Productos" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#btnMisContactos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Contactos" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#btnEstadisticas" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Estadísticas" textFill="WHITE">
-                     <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
-                        <URL value="@styles/style.css" />
-                     </stylesheets>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#btnMiPerfil" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Perfil" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnMisProductos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Productos">
                      <stylesheets>
                         <URL value="@styles/style.css" />
                      </stylesheets>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnChat" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Chat en linea" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnMisContactos" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mis Contactos">
                      <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
                         <URL value="@styles/style.css" />
                      </stylesheets>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnMapa" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Ubicación" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnEstadisticas" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Estadísticas">
+                     <stylesheets>
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnMiPerfil" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Perfil">
+                     <stylesheets>
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnChat" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Chat en linea">
+                     <stylesheets>
+                        <URL value="@styles/style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnMapa" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Mi Ubicación">
                      <stylesheets>
                         <URL value="@styles/style.css" />
                      </stylesheets>
                   </Button>
                   <Region VBox.vgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Cerrar Sesión" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#btnCerrarSesion" prefHeight="38.0" prefWidth="250.0" styleClass="boton" text="Cerrar Sesión">
                      <stylesheets>
-                        <URL value="@styles/styleDashboard.css" />
                         <URL value="@styles/style.css" />
                      </stylesheets>
                      <VBox.margin>

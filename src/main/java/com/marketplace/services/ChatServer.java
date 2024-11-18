@@ -5,18 +5,47 @@ import java.net.*;
 import java.util.*;
 
 public class ChatServer {
-    private static final int PORT = 12345; // Puerto para el servidor
+    private static final int PORT = 12345;
     private static Set<PrintWriter> clientWriters = new HashSet<>();
+    private static ServerSocket serverSocket;
+    private static boolean isRunning = false;
+    private static Thread serverThread;
 
-    public static void main(String[] args) {
-        System.out.println("Servidor de chat iniciado...");
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            while (true) {
-                new ClientHandler(serverSocket.accept()).start();
+    public static void startServer() {
+        if (!isRunning) {
+            serverThread = new Thread(() -> {
+                try {
+                    serverSocket = new ServerSocket(PORT);
+                    isRunning = true;
+                    System.out.println("Servidor de chat iniciado en puerto " + PORT);
+                    
+                    while (isRunning) {
+                        Socket clientSocket = serverSocket.accept();
+                        new ClientHandler(clientSocket).start();
+                    }
+                } catch (IOException e) {
+                    if (isRunning) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            serverThread.start();
+        }
+    }
+
+    public static void stopServer() {
+        isRunning = false;
+        try {
+            if (serverSocket != null && !serverSocket.isClosed()) {
+                serverSocket.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean isRunning() {
+        return isRunning;
     }
 
     private static class ClientHandler extends Thread {

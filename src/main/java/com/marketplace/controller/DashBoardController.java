@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 
 import com.marketplace.App;
 import com.marketplace.model.Vendedor;
+import com.marketplace.services.ChatServer;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -184,6 +185,13 @@ public class DashBoardController {
     @FXML
     void btnChat(ActionEvent event) {
         try {
+            // Iniciar el servidor si no está corriendo
+            if (!ChatServer.isRunning()) {
+                ChatServer.startServer();
+                // Esperar un momento para que el servidor inicie
+                Thread.sleep(1000);
+            }
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/marketplace/chatView.fxml"));
             Pane newPane = loader.load();
 
@@ -196,7 +204,8 @@ public class DashBoardController {
             contentVbox.getChildren().clear();
             contentVbox.getChildren().add(newPane);
 
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
+            mostrarError("Error", "No se pudo iniciar el chat: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -262,5 +271,10 @@ public class DashBoardController {
         } catch (IOException e) {
             throw new IOException("Error al guardar el archivo: " + e.getMessage());
         }
+    }
+
+    // Agregar método para cerrar el servidor al cerrar la aplicación
+    public void shutdown() {
+        ChatServer.stopServer();
     }
 }
